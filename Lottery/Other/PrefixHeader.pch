@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  Lottery
+//
+//  Created by dengwei on 15/9/27.
+//  Copyright (c) 2015年 dengwei. All rights reserved.
+//
+
+#ifndef Lottery_PrefixHeader_pch
+#define Lottery_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+//日志开关
+#ifdef DEBUG
+#define DZLog(...) NSLog(@"%s line:%d\n %@ \n\n", __func__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+#else
+#define DZLog(...)
+#endif
+
+//判断是否为iOS7
+#define iOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+
+//判断是否为4英寸屏
+#define is4inch ([UIScreen mainScreen].bounds.size.height == 568.0)
+
+#endif
